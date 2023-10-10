@@ -19,7 +19,7 @@ UNION    : 두 개 이상의 SELECT문 결과를 결합해서 하나의 결과 �
           *SELECT 열 이름 FROM 테이블1 UNION SELECT 열 이름 FROM 테이블2;
 JOIN     : 다수의 테이블을 연결하여 데이터를 결합하는데 사용.
            INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN 등.
-           *SELECT O.O_ID, C.C_NAME
+           *SE LECT O.O_ID, C.C_NAME
             FROM ORDER O
             INNER JOIN CUSTOMERS ON O.C_ID = C.C_ID;
     - JOIN 내 다양한 JOIN문
@@ -28,3 +28,12 @@ JOIN     : 다수의 테이블을 연결하여 데이터를 결합하는데 사�
       RIGHT JOIN      : 오른쪽 테이블의 모든 행을 포함. 왼쪽 테이블에서 일치하는 행을 선택. 오른쪽 테이블에 있는 모든 행이 결과 집합에 포함되고 왼쪽 테이블과 일치하는 행이 없으면 NULL값 포함.
       FULL OUTER JOIN : 왼쪽 테이블과 오른쪽 테이블의 모든 행을 포함. 양쪽 테이블의 모든 데이터를 모두 가져옴. 일치하는 행이 있는 경우에는 해당 데이터를 포함. 왼쪽 테이블 또는 오른쪽 테이블의 한쪽에만 있는 데이터는 NULL값 포함.
                         주로 양쪽 테이블의 모든 데이터를 가져와야 할 때 사용.
+CASE     : 조건에 따라 다른 결과를 반환하는데 사용. CASE문은 주로 SELECT문에서 사용. 다양한 조건에 따라 다른 값을 출력하거나 계산하는데 유용.
+           CASE 다음에 WHEN절을 사용해서 조건을 지정. THEN 조건을 만족했을 때 반환할 결과 값을 지정. 여러 WHEN을 사용해서 여러 조건을 처리할 수 있으며, 각 조건에 해당하는 결과를 정의.
+           ELSE 모든 조건이 만족되지 않을 때 반환할 기본값을 정의하는데 사용. 선택사항.
+           END CASE문을 종료함을 나타내는 구문.
+         *CASE
+           WHEN 조건1 THEN 결과1
+           WHEN 조건n THEN 결과n
+           ELSE 기본값
+          END
